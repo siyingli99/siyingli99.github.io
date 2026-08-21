@@ -18,9 +18,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am currently a Ph.D. candidate in Transportation Engineering at the College of Transportation, Tongji University.
+I am currently a Ph.D. candidate in Transportation Engineering at the College of Transportation, Tongji University, advised by [Prof. Ying Ni](https://tops.tongji.edu.cn/info/1031/1186.htm) and co-advised by [Prof. Haotian Shi](https://haotianshi.github.io/).
 
-My research interests lie at the intersection of **computer vision and autonomous driving**, with a particular focus on **3D vision, neural simulation and end-to-end autonomous driving**.
+My research interests lie at the intersection of **computer vision and autonomous driving**, with a particular focus on **3D vision, neural simulation, and end-to-end autonomous driving**.
 
 My research aims to build realistic and interactive virtual environments for autonomous driving, and to leverage them for systematic evaluation, diagnosis, and improvement of autonomous driving systems.
 

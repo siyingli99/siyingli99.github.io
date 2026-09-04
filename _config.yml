@@ -1,6 +1,7 @@
 # Site Settings
 title                    : "Siying Li"
-description              : "Ciallo~(∠・ω< )⌒★!"
+description              : "Ph.D. candidate researching 3D vision, neural simulation, and end-to-end autonomous driving at Tongji University."
+url                      : "https://siyingli99.github.io"
 repository               : "siyingli99/siyingli99.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -17,6 +18,7 @@ author:
   name             : "Siying Li"
   avatar           : "images/avatar.jpg"
   bio              : "Ph.D. Candidate in Transportation Engineering"
+  note             : "Ciallo~(∠・ω< )⌒★!"
   location         : "Shanghai, China"
   employer         : "Tongji University"
 

@@ -716,6 +716,228 @@ html[data-theme="night"] .paper-box-image img {
   border: 0;
 }
 
+.aether-project {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, transparent 0 72%, var(--manga-accent-soft) 72% 100%),
+    var(--manga-surface-raised);
+  border: 3px solid var(--manga-line-strong);
+  box-shadow: 9px 9px 0 var(--manga-shadow);
+
+  &:before {
+    position: absolute;
+    top: 4.4rem;
+    right: -2.4rem;
+    width: 9rem;
+    height: 9rem;
+    pointer-events: none;
+    content: "";
+    border: 1px solid var(--manga-accent-fade);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 1.5rem var(--manga-accent-soft),
+      0 0 0 1.6rem var(--manga-accent-fade);
+    opacity: 0.65;
+  }
+}
+
+.aether-project__topline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.8rem;
+  color: var(--manga-on-accent);
+  font-family: $monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--manga-accent);
+}
+
+.aether-project__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  i {
+    width: 0.55rem;
+    height: 0.55rem;
+    background: currentColor;
+    border: 1px solid var(--manga-line-strong);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 currentColor;
+    animation: aether-pulse 2.2s ease-out infinite;
+  }
+}
+
+.aether-project__intro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  padding: 2rem;
+
+  h3 {
+    max-width: 760px;
+    margin: 0 0 0.8rem;
+    color: var(--manga-ink);
+    font-family: "Arial Narrow", $sans-serif-narrow;
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+
+  > div:first-child > p:last-child {
+    max-width: 760px;
+    margin: 0;
+    color: var(--manga-copy);
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+}
+
+.aether-project__index {
+  margin: 0 0 0.5rem !important;
+  color: var(--manga-accent) !important;
+  font-family: $monospace;
+  font-size: 0.75rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.aether-project__actions {
+  display: flex;
+  min-width: 11rem;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  .action-link {
+    justify-content: space-between;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
+.aether-pipeline {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--manga-code);
+  border-top: 2px solid var(--manga-line-strong);
+  border-bottom: 2px solid var(--manga-line-strong);
+
+  li {
+    position: relative;
+    display: flex;
+    min-height: 7.2rem;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem;
+    border-right: 1px solid var(--manga-line);
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  span,
+  small {
+    color: var(--manga-muted);
+    font-family: $monospace;
+    font-size: 0.75rem;
+  }
+
+  strong {
+    margin: 0.25rem 0;
+    color: var(--manga-ink);
+    font-size: 0.88rem;
+    text-transform: uppercase;
+  }
+
+  span {
+    color: var(--manga-accent);
+    font-weight: 700;
+  }
+}
+
+.aether-capabilities {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: var(--manga-line-strong);
+
+  section {
+    padding: 1.15rem;
+    background: var(--manga-surface-raised);
+  }
+
+  span {
+    color: var(--manga-accent);
+    font-family: $monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    margin: 0.35rem 0 0.45rem;
+    color: var(--manga-ink);
+    font-size: 0.96rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--manga-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+}
+
+.aether-project__lineage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1.2rem;
+  background: var(--manga-accent-soft);
+  border-top: 2px solid var(--manga-line-strong);
+
+  span {
+    color: var(--manga-accent);
+    font-family: $monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    color: var(--manga-copy);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+}
+
 .focus-card,
 .experience-card {
   background: var(--manga-surface-raised);
@@ -1163,6 +1385,16 @@ html[data-theme="night"] .contact-card {
   }
 }
 
+@keyframes aether-pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 0.45rem transparent;
+  }
+}
+
 @media (hover: hover) {
   .paper-box:hover,
   .focus-card:hover {
@@ -1184,6 +1416,45 @@ html[data-theme="night"] .contact-card {
 @media (max-width: 767px) {
   .paper-highlights {
     grid-template-columns: 1fr;
+  }
+
+  .aether-project__intro {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1.4rem;
+  }
+
+  .aether-project__actions {
+    min-width: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .aether-pipeline {
+    grid-template-columns: 1fr;
+
+    li {
+      display: grid;
+      min-height: 0;
+      grid-template-columns: 2rem 6rem minmax(0, 1fr);
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-right: 0;
+      border-bottom: 1px solid var(--manga-line);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .aether-capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .aether-project__lineage {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 
   .now-panel {

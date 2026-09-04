@@ -101,9 +101,14 @@ redirect_from:
     </div>
     <div class="paper-details" id="details-decouplegs" hidden>
       <p class="paper-details__label">Abstract</p>
-      <p>DecoupleGS is a decoupled 3D Gaussian Splatting framework for large-scale, closed-loop end-to-end autonomous driving evaluation. It separates a persistent high-fidelity background from manipulable dynamic agents, then addresses efficiency, geometric alignment, and photometric consistency through asset compression, map-guided registration, and proxy-based relighting. The resulting system balances visual fidelity, interactivity, and real-time performance for practical sensor simulation.</p>
+      <p>End-to-end driving systems need closed-loop testing environments that are simultaneously photorealistic, interactive, and fast enough for online control. DecoupleGS meets these requirements by separating a persistent high-fidelity background from reusable dynamic agents represented in object-centric canonical coordinates, then compositing them through a unified 3D Gaussian rasterizer. Three targeted modules resolve the conflicts introduced by dynamic scene composition: perceptual pruning and vector quantization compress traffic assets; map-guided registration aligns agent trajectories and road contact in metric space; and proxy-based relighting transfers local illumination and contact shadows without online neural inference. Together, they support controllable multi-agent sensor simulation while preserving geometric and photometric consistency.</p>
+      <ul class="paper-highlights" aria-label="DecoupleGS highlights">
+        <li><strong>System design</strong><span>Decouples static infrastructure from manipulable canonical agents and renders both streams together with physically consistent occlusion.</span></li>
+        <li><strong>Evaluation</strong><span>Evaluated on nuScenes and PandaSet scenes with 3DRealCar assets, plus UniAD and VAD open- and closed-loop testing.</span></li>
+        <li><strong>Key result</strong><span>Runs at 45 FPS in the simulator comparison, reaches 0.884 Driving Score and 0.956 Route Completion, and scales to 50 agents.</span></li>
+      </ul>
       <div class="keyword-strip" aria-label="Key topics">
-        <span>3D Gaussian Splatting</span><span>Closed-loop testing</span><span>Neural simulation</span>
+        <span>3D Gaussian Splatting</span><span>Dynamic scene composition</span><span>Sensor simulation</span><span>Closed-loop testing</span>
       </div>
       <div class="citation-block">
         <div class="citation-block__heading">
@@ -136,9 +141,14 @@ redirect_from:
     </div>
     <div class="paper-details" id="details-vru-hazard" hidden>
       <p class="paper-details__label">Abstract</p>
-      <p>This work targets early recognition of hazardous interactions between vehicles and vulnerable road users. It combines monocular 3D localization, optical-flow dynamics, and transformer-based temporal fusion to capture subtle geometric and motion cues. The accompanying VRUHI benchmark contains 6,000 urban dashcam clips and supports proactive evaluation of VRU-related hazard detection.</p>
+      <p>Hazardous interactions between vehicles and vulnerable road users often emerge through subtle spatial and motion cues that are difficult to identify from monocular video. VRU-HazardNet addresses this challenge with a multi-stream spatiotemporal architecture: monocular 3D detection provides geometric context, optical flow captures motion dynamics, and transformer-based temporal self-attention fuses these signals to recognize early hazard precursors. The work also introduces VRUHI, a dedicated benchmark for vehicle–VRU interaction risk, establishing a concrete evaluation setting for proactive safety assessment rather than post-event recognition.</p>
+      <ul class="paper-highlights" aria-label="VRU-HazardNet highlights">
+        <li><strong>Architecture</strong><span>Fuses monocular 3D localization and optical-flow dynamics through a transformer-based temporal model.</span></li>
+        <li><strong>Dataset</strong><span>VRUHI contains 6,000 urban dashcam clips at 25 FPS: 2,000 hazardous interactions and 4,000 safe cases.</span></li>
+        <li><strong>Key result</strong><span>Achieves 78.37% AUC and 41.03% F1-score on VRUHI, outperforming the reported prior methods.</span></li>
+      </ul>
       <div class="keyword-strip" aria-label="Key topics">
-        <span>VRU safety</span><span>Spatiotemporal fusion</span><span>Hazard detection</span>
+        <span>VRU safety</span><span>Monocular 3D detection</span><span>Optical flow</span><span>Spatiotemporal fusion</span>
       </div>
       <div class="citation-block">
         <div class="citation-block__heading">
@@ -173,9 +183,14 @@ redirect_from:
     </div>
     <div class="paper-details" id="details-capo" hidden>
       <p class="paper-details__label">Abstract</p>
-      <p>This paper introduces Constrained-Adversarial Policy Optimization (CAPO) for generating safety-critical yet solvable autonomous-driving scenarios. A two-phase continual-learning framework first trains agents to complete driving tasks under safety constraints, then introduces an autonomous-vehicle expert so adversarial agents can generate challenging interactions without collapsing into unavoidable collisions.</p>
+      <p>Safety-critical scenarios are valuable for autonomous-driving validation but rare in natural data, while unconstrained adversarial generation often produces unrealistic or inevitable collisions that leave the tested vehicle no meaningful response. Constrained-Adversarial Policy Optimization (CAPO) introduces adversarial rationality through a two-phase continual-learning framework. The first phase uses multi-agent reinforcement learning with a safety-constraint function so traffic agents learn valid interaction and task completion. The second phase introduces an autonomous-vehicle expert and optimizes adversarial behavior subject to the expert’s minimum safety constraint, producing challenging interactions that remain solvable rather than degenerating into unavoidable crashes.</p>
+      <ul class="paper-highlights" aria-label="CAPO highlights">
+        <li><strong>Core problem</strong><span>Balances scenario criticality with solvability so adversarial traffic remains useful for decision-making tests.</span></li>
+        <li><strong>Two phases</strong><span>Learns safety-aligned multi-agent behavior first, then introduces an AV expert for constrained adversarial generation.</span></li>
+        <li><strong>Reported outcome</strong><span>Open- and closed-loop tests produce more solvable safety-critical cases while reducing unrealistic and unavoidable collisions.</span></li>
+      </ul>
       <div class="keyword-strip" aria-label="Key topics">
-        <span>Scenario generation</span><span>Continual learning</span><span>Safety constraints</span>
+        <span>Adversarial scenarios</span><span>Multi-agent reinforcement learning</span><span>Continual learning</span><span>Safety constraints</span>
       </div>
       <div class="citation-block">
         <div class="citation-block__heading">
@@ -285,6 +300,72 @@ redirect_from:
         <li><strong>Key result</strong><span>Reaches 32.9 EPDMS with LTF, improving by 5.2 points over GLISTER and 3.5 points over the matched-feedback LESS baseline.</span></li>
       </ul>
       <div class="keyword-strip" aria-label="Key topics"><span>Training allocation</span><span>Sparse closed-loop feedback</span><span>Data valuation</span><span>End-to-end driving</span></div>
+    </div>
+  </article>
+</section>
+
+<span class="anchor" id="aether"></span>
+<section class="content-section aether-section" data-chapter="SYSTEM / LIVE" aria-labelledby="aether-title">
+  <div class="section-heading section-heading--with-copy">
+    <div>
+      <p class="eyebrow">Research system</p>
+      <h2 id="aether-title">AETHER</h2>
+    </div>
+    <p>A continuously evolving engineering platform that turns research ideas into an executable autonomous-driving simulator.</p>
+  </div>
+
+  <article class="aether-project">
+    <div class="aether-project__topline">
+      <span>Public research code</span>
+      <span class="aether-project__status"><i aria-hidden="true"></i>Active development</span>
+    </div>
+
+    <div class="aether-project__intro">
+      <div>
+        <p class="aether-project__index">PROJECT // 01</p>
+        <h3>High-fidelity, multimodal closed-loop simulation for end-to-end driving</h3>
+        <p>AETHER is an editable driving-scene pipeline built around 3D Gaussian Splatting. It reconstructs real scenes, inserts and controls traffic actors, synthesizes synchronized RGB and LiDAR observations, and feeds those observations into closed-loop driving and diagnosis. Rather than being a static demo, it serves as the engineering convergence point for the simulation, self-improvement, and evaluation ideas developed across this research.</p>
+      </div>
+      <div class="aether-project__actions">
+        <a class="action-link action-link--primary" href="https://github.com/siyingli99/Aether" target="_blank" rel="noopener">Explore on GitHub <span aria-hidden="true">↗</span></a>
+        <a class="action-link" href="https://github.com/siyingli99/Aether/blob/main/METHODOLOGY.md" target="_blank" rel="noopener">Read methodology <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <ol class="aether-pipeline" aria-label="AETHER simulation pipeline">
+      <li><span>01</span><strong>Reconstruct</strong><small>Real-world 3DGS scenes</small></li>
+      <li><span>02</span><strong>Edit</strong><small>Actors, routes, and events</small></li>
+      <li><span>03</span><strong>Sense</strong><small>RGB and LiDAR views</small></li>
+      <li><span>04</span><strong>Roll out</strong><small>End-to-end closed loop</small></li>
+      <li><span>05</span><strong>Refine</strong><small>Distillation and diagnosis</small></li>
+    </ol>
+
+    <div class="aether-capabilities">
+      <section>
+        <span>01 / Scene</span>
+        <h4>Editable neural environments</h4>
+        <p>Reconstructs real driving scenes with 3DGS and provides scenario editing for actor placement, trajectory replay, termination logic, and controlled interaction.</p>
+      </section>
+      <section>
+        <span>02 / Sensors</span>
+        <h4>Camera–LiDAR synthesis</h4>
+        <p>Combines RGB rendering and enhancement with geometric or learned LiDAR simulation covering range, intensity, ray returns, point clouds, and novel viewpoints.</p>
+      </section>
+      <section>
+        <span>03 / Closed loop</span>
+        <h4>Policy-in-the-loop testing</h4>
+        <p>Connects synchronized sensor observations to a maintained UniAD adapter, updates the scene from policy actions, and records replayable multimodal rollouts.</p>
+      </section>
+      <section>
+        <span>04 / Feedback</span>
+        <h4>Self-improvement and diagnosis</h4>
+        <p>Supports reverse distillation from enhanced observations, semantic-causal diagnosis, and evaluation with HUGSIM-, NAVSIM-, and Bench2Drive-style metrics.</p>
+      </section>
+    </div>
+
+    <div class="aether-project__lineage">
+      <span>Research → system</span>
+      <p>Decoupled scene composition, multimodal novel-view enhancement, reverse distillation, and beyond-ego diagnosis are brought together in one reproducible pipeline that will continue to evolve.</p>
     </div>
   </article>
 </section>

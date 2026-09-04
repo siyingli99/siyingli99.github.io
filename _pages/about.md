@@ -128,7 +128,6 @@ redirect_from:
       </div>
       <div class="aether-project__actions">
         <a class="action-link action-link--primary" href="https://github.com/siyingli99/Aether" target="_blank" rel="noopener">Explore on GitHub <span aria-hidden="true">↗</span></a>
-        <a class="action-link" href="https://github.com/siyingli99/Aether/blob/main/METHODOLOGY.md" target="_blank" rel="noopener">Read methodology <span aria-hidden="true">↗</span></a>
       </div>
     </div>
 
@@ -257,7 +256,7 @@ redirect_from:
         <article class="aether-progress__item">
           <span>02 / Current milestone</span>
           <h5>Reliable scene-level testing</h5>
-          <p>Current experiments reconstruct scenes from public driving datasets, with PandaSet scene 095 as the documented default asset. Editing is presently centered on one vehicle at a time, scene diversity is still modest, and UniAD is the only maintained end-to-end adapter.</p>
+          <p>Current development focuses on reliable testing across reconstructed scenes from public driving datasets. The internal system already supports multiple scenes and multiple driving algorithms, although not every integration is included in the public repository yet. Scenario editing is still centered on one vehicle at a time, while broader traffic composition and scene diversity remain active work.</p>
         </article>
         <article class="aether-progress__item aether-progress__item--next">
           <span>03 / Next target</span>

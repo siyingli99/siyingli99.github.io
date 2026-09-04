@@ -861,15 +861,25 @@ html[data-theme="night"] .paper-box-image img {
   }
 
   strong {
+    display: flex;
+    min-height: 1.25rem;
+    align-items: center;
     margin: 0.25rem 0;
     color: var(--manga-ink);
     font-size: 0.88rem;
+    line-height: 1.25;
     text-transform: uppercase;
   }
 
   span {
     color: var(--manga-accent);
     font-weight: 700;
+  }
+
+  small {
+    display: block;
+    min-height: 2.1rem;
+    line-height: 1.4;
   }
 }
 
@@ -1827,6 +1837,11 @@ html[data-theme="night"] .contact-card {
       &:last-child {
         border-bottom: 0;
       }
+    }
+
+    strong,
+    small {
+      min-height: 0;
     }
   }
 

@@ -134,7 +134,7 @@ redirect_from:
     <ol class="aether-pipeline" aria-label="AETHER simulation pipeline">
       <li><span>01</span><strong>Reconstruct</strong><small>Real-world 3DGS scenes</small></li>
       <li><span>02</span><strong>Edit</strong><small>Actors, routes, and events</small></li>
-      <li><span>03</span><strong>Sense</strong><small>RGB and LiDAR views</small></li>
+      <li><span>03</span><strong>Sense</strong><small>RGB and LiDAR novel views</small></li>
       <li><span>04</span><strong>Roll out</strong><small>End-to-end closed loop</small></li>
       <li><span>05</span><strong>Refine</strong><small>Distillation and diagnosis</small></li>
     </ol>
@@ -256,7 +256,7 @@ redirect_from:
         <article class="aether-progress__item">
           <span>02 / Current milestone</span>
           <h5>Reliable scene-level testing</h5>
-          <p>Current development focuses on reliable testing across reconstructed scenes from public driving datasets. The internal system already supports multiple scenes and multiple driving algorithms, although not every integration is included in the public repository yet. Scenario editing is still centered on one vehicle at a time, while broader traffic composition and scene diversity remain active work.</p>
+          <p>Current development focuses on reliable testing across reconstructed scenes from public driving datasets. Scenario editing is still centered on one vehicle at a time, while broader traffic composition and scene diversity remain active work.</p>
         </article>
         <article class="aether-progress__item aether-progress__item--next">
           <span>03 / Next target</span>

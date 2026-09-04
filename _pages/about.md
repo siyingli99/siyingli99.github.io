@@ -54,7 +54,7 @@ redirect_from:
   <div class="news-list">
     <div class="news-item">
       <time datetime="2026-08">2026.08</time>
-      <p><span class="news-mark">Latest</span> Three papers are currently under review at <strong>AAAI 2027</strong>.</p>
+      <p><span class="news-mark">Latest</span> Three manuscripts are currently under review.</p>
     </div>
     <div class="news-item">
       <time datetime="2026-07">2026.07</time>
@@ -200,7 +200,7 @@ redirect_from:
       <h3>Manuscripts under review</h3>
       <p>Ongoing work shared for research communication.</p>
     </div>
-    <span>AAAI 2027</span>
+    <span>Under review</span>
   </div>
 
   <article class="paper-box" id="paper-echosplat">
@@ -209,12 +209,12 @@ redirect_from:
     </div>
     <div class="paper-box-text">
       <div class="paper-meta">
-        <span class="paper-label">AAAI 2027</span>
+        <span class="paper-label">Manuscript</span>
         <span class="paper-status paper-status--review">Under review</span>
       </div>
       <h3>EchoSplat: Self-Improving Camera–LiDAR Neural Simulation for Autonomous Driving Testing</h3>
       <p class="paper-authors"><strong>Siying Li</strong>, Ying Ni, Yujia Zhao, Yuanbiao Cao, Jie Sun, Xintao Yan, Ye Tian, Jian Sun, Haotian Shi</p>
-      <p class="paper-venue">Under review at the AAAI Conference on Artificial Intelligence.</p>
+      <p class="paper-venue">Manuscript under review.</p>
       <div class="paper-links">
         <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-echosplat">Read abstract <span aria-hidden="true">＋</span></button>
       </div>
@@ -237,12 +237,12 @@ redirect_from:
     </div>
     <div class="paper-box-text">
       <div class="paper-meta">
-        <span class="paper-label">AAAI 2027</span>
+        <span class="paper-label">Manuscript</span>
         <span class="paper-status paper-status--review">Under review</span>
       </div>
       <h3>Scene2Flow: Evaluating End-to-End Autonomous Driving Beyond the Ego Vehicle</h3>
       <p class="paper-authors">Yuanbiao Cao<sup>†</sup>, <strong>Siying Li<sup>†</sup></strong>, Yujia Zhao, Tong Nie, Xiaocong Zhao, Jie Sun, Peng Hang, Haotian Shi</p>
-      <p class="paper-venue">Under review at the AAAI Conference on Artificial Intelligence.</p>
+      <p class="paper-venue">Manuscript under review.</p>
       <p class="paper-note"><sup>†</sup> Equal contribution.</p>
       <div class="paper-links">
         <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-scene2flow">Read abstract <span aria-hidden="true">＋</span></button>
@@ -266,12 +266,12 @@ redirect_from:
     </div>
     <div class="paper-box-text">
       <div class="paper-meta">
-        <span class="paper-label">AAAI 2027</span>
+        <span class="paper-label">Manuscript</span>
         <span class="paper-status paper-status--review">Under review</span>
       </div>
       <h3>TargetDrive: Closing the Loop on Training Allocation for End-to-End Autonomous Driving</h3>
       <p class="paper-authors">Yujia Zhao, Jie Wang, <strong>Siying Li</strong>, Yuanbiao Cao, Yixin Li, Jialin Fan, Ying Ni, Haotian Shi, Jie Sun, Jian Sun</p>
-      <p class="paper-venue">Under review at the AAAI Conference on Artificial Intelligence.</p>
+      <p class="paper-venue">Manuscript under review.</p>
       <div class="paper-links">
         <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-targetdrive">Read abstract <span aria-hidden="true">＋</span></button>
       </div>

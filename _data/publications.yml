@@ -1,0 +1,240 @@
+# Publication content is kept separate from page markup so entries can be updated
+# without editing the layout. Set any visibility flag to false before publishing
+# when a field should temporarily remain private.
+
+peer_reviewed:
+  - id: decouplegs
+    visible: true
+    featured: true
+    image: /images/decouplegs.png
+    image_alt: Overview of the DecoupleGS interactive 3D driving simulation method
+    image_width: 1131
+    image_height: 504
+    label: ECCV 2026
+    status: Accepted
+    status_class: accepted
+    title: "DecoupleGS: Interactive 3D Gaussian Splatting for End-to-End Autonomous Driving Testing"
+    authors_html: "<strong>Siying Li</strong>, Ying Ni, Jie Sun, Jian Sun, Haotian Shi"
+    venue: "European Conference on Computer Vision (ECCV), 2026"
+    visibility:
+      show_authors: true
+      show_venue: true
+      show_note: false
+      show_links: true
+      show_details: true
+      show_citation: true
+    links:
+      - label: arXiv
+        url: https://arxiv.org/abs/2608.01761
+        external: true
+    abstract: >-
+      End-to-end driving systems need closed-loop testing environments that are simultaneously photorealistic, interactive, and fast enough for online control. DecoupleGS meets these requirements by separating a persistent high-fidelity background from reusable dynamic agents represented in object-centric canonical coordinates, then compositing them through a unified 3D Gaussian rasterizer. Three targeted modules resolve the conflicts introduced by dynamic scene composition: perceptual pruning and vector quantization compress traffic assets; map-guided registration aligns agent trajectories and road contact in metric space; and proxy-based relighting transfers local illumination and contact shadows without online neural inference. Together, they support controllable multi-agent sensor simulation while preserving geometric and photometric consistency.
+    highlights:
+      - label: System design
+        text: Decouples static infrastructure from manipulable canonical agents and renders both streams together with physically consistent occlusion.
+      - label: Evaluation
+        text: Evaluated on nuScenes and PandaSet scenes with 3DRealCar assets, plus UniAD and VAD open- and closed-loop testing.
+      - label: Key result
+        text: Runs at 45 FPS in the simulator comparison, reaches 0.884 Driving Score and 0.956 Route Completion, and scales to 50 agents.
+    keywords:
+      - 3D Gaussian Splatting
+      - Dynamic scene composition
+      - Sensor simulation
+      - Closed-loop testing
+    citation: |-
+      @article{li2026decouplegs,
+        title={DecoupleGS: Interactive 3D Gaussian Splatting for End-to-End Autonomous Driving Testing},
+        author={Li, Siying and Ni, Ying and Sun, Jie and Sun, Jian and Shi, Haotian},
+        journal={arXiv preprint arXiv:2608.01761},
+        year={2026}
+      }
+
+  - id: vru-hazard
+    visible: true
+    label: ITSC 2025
+    status: Published
+    status_class: published
+    title: VRU-Centric Hazardous Scenario Detection via Monocular Spatiotemporal Feature Fusion
+    authors_html: "Ying Ni, <strong>Siying Li</strong>, Jialin Fan"
+    venue: "2025 IEEE 28th International Conference on Intelligent Transportation Systems, pp. 4685–4690"
+    visibility:
+      show_authors: true
+      show_venue: true
+      show_note: false
+      show_links: true
+      show_details: true
+      show_citation: true
+    links:
+      - label: Paper
+        url: https://doi.org/10.1109/ITSC60802.2025.11423759
+        external: true
+    abstract: >-
+      Hazardous interactions between vehicles and vulnerable road users often emerge through subtle spatial and motion cues that are difficult to identify from monocular video. VRU-HazardNet turns these cues into an explicit risk score with a two-stream pipeline: MonoTTA and AB3DMOT recover tracked monocular 3D geometry, SEA-RAFT and ResNet-50 encode motion, and a causally masked temporal Transformer fuses both streams. Mean-pooled temporal features pass through a calibrated risk head with temperature scaling and Focal Loss, improving confidence stability and sensitivity to rare hazards. The work also introduces VRUHI, a dedicated benchmark for proactive vehicle–VRU risk assessment rather than post-event recognition.
+    highlights:
+      - label: Architecture
+        text: Uses frozen 3D detection, tracking, and optical-flow front ends with a 4-layer, 8-head, 512-dimensional Transformer for temporal risk reasoning.
+      - label: Dataset
+        text: VRUHI contains 6,000 one-second, 25-frame D2-City clips—2,000 hazardous and 4,000 safe—with severity, interaction, and lane-separation annotations.
+      - label: Evidence
+        text: Achieves 78.37% AUC and 41.03% F1; combining 3D boxes and flow adds 7.09 AUC points over RGB alone and exceeds R(2+1)D by 2.95 AUC points.
+    keywords:
+      - VRU safety
+      - Monocular 3D detection
+      - Optical flow
+      - Spatiotemporal fusion
+    citation: |-
+      @inproceedings{ni2025vru,
+        title={VRU-Centric Hazardous Scenario Detection via Monocular Spatiotemporal Feature Fusion},
+        author={Ni, Ying and Li, Siying and Fan, Jialin},
+        booktitle={2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)},
+        pages={4685--4690},
+        year={2025},
+        doi={10.1109/ITSC60802.2025.11423759}
+      }
+
+  - id: capo
+    visible: true
+    label: ITSC 2025
+    status: Published
+    status_class: published
+    title: "Interactive Adversarial Scenario Generation for Autonomous Driving: A Continual Learning Framework with Safety Constraints"
+    authors_html: "Jialin Fan, Ying Ni, Yuhang Chen, <strong>Siying Li</strong>, Jie Sun, Jian Sun"
+    venue: "2025 IEEE 28th International Conference on Intelligent Transportation Systems, pp. 4656–4662"
+    visibility:
+      show_authors: true
+      show_venue: true
+      show_note: false
+      show_links: true
+      show_details: true
+      show_citation: true
+    links:
+      - label: Paper
+        url: https://doi.org/10.1109/ITSC60802.2025.11423840
+        external: true
+    abstract: >-
+      Safety-critical scenarios are valuable for autonomous-driving validation but rare in natural data, while unconstrained adversarial generation often produces unrealistic or inevitable collisions that leave the tested vehicle no meaningful response. Constrained-Adversarial Policy Optimization (CAPO) introduces adversarial rationality through a two-phase continual-learning framework. Phase I augments independent multi-agent PPO with a learned safety-constraint function that approximates Hamilton–Jacobi reachability, allowing background vehicles to learn realistic task completion and safe interaction. Phase II introduces an autonomous-vehicle expert, freezes the task value function, and optimizes adversarial behavior according to the expert's estimated safety margin. This creates near-conflict interactions that remain challenging and solvable rather than collapsing into unavoidable crashes.
+    highlights:
+      - label: Constrained policy
+        text: A dual-value objective combines task advantage with a learned safety value, then uses that constraint to regulate adversarial pressure on the AV expert.
+      - label: Training setup
+        text: Trained in MetaDrive with 20 agents, partial local observations, five random seeds, and 1.5 million steps; compared against Vanilla-IPPO and collision-driven ADV-IPPO.
+      - label: Validation
+        text: Open-loop TTC/PET analysis reduces extreme-risk cases, while four closed-loop scenarios preserve corrective space in left-turn, crossing, cut-in, and head-on conflicts.
+    keywords:
+      - Adversarial scenarios
+      - Multi-agent reinforcement learning
+      - Hamilton–Jacobi safety
+      - Continual learning
+    citation: |-
+      @inproceedings{fan2025interactive,
+        title={Interactive Adversarial Scenario Generation for Autonomous Driving: A Continual Learning Framework with Safety Constraints},
+        author={Fan, Jialin and Ni, Ying and Chen, Yuhang and Li, Siying and Sun, Jie and Sun, Jian},
+        booktitle={2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)},
+        pages={4656--4662},
+        year={2025},
+        doi={10.1109/ITSC60802.2025.11423840}
+      }
+
+under_review:
+  - id: echosplat
+    visible: true
+    image: /images/echosplat.png
+    image_alt: EchoSplat camera and LiDAR neural simulation pipeline
+    image_width: 1215
+    image_height: 657
+    label: Manuscript
+    status: Under review
+    status_class: review
+    title: "EchoSplat: Self-Improving Camera–LiDAR Neural Simulation for Autonomous Driving Testing"
+    authors_html: "<strong>Siying Li</strong>, Ying Ni, Yujia Zhao, Yuanbiao Cao, Jie Sun, Xintao Yan, Ye Tian, Jian Sun, Haotian Shi"
+    venue: Manuscript under review.
+    visibility:
+      show_authors: true
+      show_venue: true
+      show_note: false
+      show_links: false
+      show_details: true
+      show_citation: false
+    abstract: >-
+      Closed-loop testing requires realistic camera and LiDAR observations at policy-induced ego poses, yet reconstruction-based neural simulators degrade when the vehicle moves away from recorded trajectories. EchoSplat addresses this limitation with a shared multi-node 3D Gaussian representation for synchronized camera and LiDAR synthesis. Sensor-specific restoration networks recover degraded off-trajectory observations, while uncertainty-aware multimodal reverse distillation feeds reliable corrections back into the shared scene. This persistent render–restore–refine loop improves novel-view fidelity, cross-modal consistency, representation-level generalization, and downstream driving consistency.
+    highlights:
+      - label: Core idea
+        text: Shared 3D Gaussians with a dynamic-aware spherical LiDAR head for range, intensity, and ray-return synthesis.
+      - label: Evaluation
+        text: Restoration models trained on nuScenes and evaluated on unseen PandaSet scenes without target-scene fine-tuning.
+      - label: Key result
+        text: Achieves 22.18 PSNR and 0.2432 LPIPS for RGB novel views, with the best downstream results in both camera-only and camera–LiDAR tracks.
+    keywords:
+      - Camera–LiDAR simulation
+      - 3D Gaussian Splatting
+      - Reverse distillation
+      - Novel-view synthesis
+
+  - id: scene2flow
+    visible: true
+    image: /images/scene2flow.png
+    image_alt: Scene2Flow evaluation framework for traffic participants beyond the ego vehicle
+    image_width: 1206
+    image_height: 426
+    label: Manuscript
+    status: Under review
+    status_class: review
+    title: "Scene2Flow: Evaluating End-to-End Autonomous Driving Beyond the Ego Vehicle"
+    authors_html: "Yuanbiao Cao<sup>†</sup>, <strong>Siying Li<sup>†</sup></strong>, Yujia Zhao, Tong Nie, Xiaocong Zhao, Jie Sun, Peng Hang, Haotian Shi"
+    venue: Manuscript under review.
+    note_html: "<sup>†</sup> Equal contribution."
+    visibility:
+      show_authors: true
+      show_venue: true
+      show_note: true
+      show_links: false
+      show_details: true
+      show_citation: false
+    abstract: >-
+      Existing closed-loop benchmarks mainly judge task completion, ego safety, and ride comfort, leaving the effects of a driving system on surrounding traffic underexplored. Scene2Flow introduces a traffic-aware evaluation framework built on editable 3D Gaussian scenes, combining action-conditioned multi-camera rendering, reactive background traffic, and a unified interface for heterogeneous end-to-end systems. It aligns ego outcomes and local traffic responses within a common task window, then evaluates traffic efficiency, background-vehicle kinematic fluctuations, and localized oscillation responses. The results show that similar ego-level performance can produce substantially different disturbances in surrounding traffic, and that favorable aggregate efficiency can coexist with amplified post-conflict oscillations.
+    highlights:
+      - label: Evaluation scope
+        text: 240 closed-loop runs covering seven end-to-end systems, a reference policy, two scenarios, three traffic levels, and five random seeds.
+      - label: Metric space
+        text: Jointly characterizes ego outcomes, macroscopic efficiency, kinematic fluctuation, and local wavelet-based oscillation.
+      - label: Diagnostic value
+        text: Reveals weak or condition-dependent agreement between ego-centric rankings and traffic-aware rankings.
+    keywords:
+      - Traffic-aware evaluation
+      - Editable 3DGS
+      - Closed-loop testing
+      - Traffic-flow analysis
+
+  - id: targetdrive
+    visible: true
+    image: /images/targetdrive.png
+    image_alt: TargetDrive training allocation framework for end-to-end autonomous driving
+    image_width: 1230
+    image_height: 861
+    label: Manuscript
+    status: Under review
+    status_class: review
+    title: "TargetDrive: Closing the Loop on Training Allocation for End-to-End Autonomous Driving"
+    authors_html: "Yujia Zhao, Jie Wang, <strong>Siying Li</strong>, Yuanbiao Cao, Yixin Li, Jialin Fan, Ying Ni, Haotian Shi, Jie Sun, Jian Sun"
+    venue: Manuscript under review.
+    visibility:
+      show_authors: true
+      show_venue: true
+      show_note: false
+      show_links: false
+      show_details: true
+      show_citation: false
+    abstract: >-
+      End-to-end driving models are trained on offline source-domain logs, while deployment quality is determined by closed-loop interaction in a target environment. TargetDrive closes this objective gap with a learner-agnostic outer-loop framework that uses sparse target-domain feedback to guide training allocation. Its Objective-Conditioned Response Teacher estimates context-dependent utility at the scenario-family level, refines those estimates with clip-level safety priors, and converts them into family quotas, replay priorities, and sample weights without changing the learner architecture or learner-side training budget. Experiments on NAVSIM-v2 and Bench2Drive show consistent gains across regression-, diffusion-, and scoring-based planners, particularly in interaction-intensive scenarios.
+    highlights:
+      - label: Core idea
+        text: Uses sparse closed-loop probing to align offline data allocation with target-domain deployment objectives.
+      - label: Generalization
+        text: Evaluated with LTF, DiffusionDrive, NavFormer, VAD, and HiP-AD across NAVSIM-v2 and Bench2Drive.
+      - label: Key result
+        text: Reaches 32.9 EPDMS with LTF, improving by 5.2 points over GLISTER and 3.5 points over the matched-feedback LESS baseline.
+    keywords:
+      - Training allocation
+      - Sparse closed-loop feedback
+      - Data valuation
+      - End-to-end driving

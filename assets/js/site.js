@@ -182,6 +182,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  Array.prototype.slice.call(document.querySelectorAll("[data-weather-demo]")).forEach(function (demo) {
+    var tabs = Array.prototype.slice.call(demo.querySelectorAll("[data-weather-tab]"));
+    var panels = Array.prototype.slice.call(demo.querySelectorAll("[data-weather-panel]"));
+
+    function selectWeather(name, moveFocus) {
+      tabs.forEach(function (tab) {
+        var isActive = tab.getAttribute("data-weather-tab") === name;
+        tab.setAttribute("aria-selected", String(isActive));
+        tab.setAttribute("tabindex", isActive ? "0" : "-1");
+        if (isActive && moveFocus) tab.focus();
+      });
+
+      panels.forEach(function (panel) {
+        var isActive = panel.getAttribute("data-weather-panel") === name;
+        panel.hidden = !isActive;
+        if (!isActive) {
+          var video = panel.querySelector("video");
+          if (video) video.pause();
+        }
+      });
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener("click", function () {
+        selectWeather(tab.getAttribute("data-weather-tab"), false);
+      });
+
+      tab.addEventListener("keydown", function (event) {
+        var nextIndex;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = tabs.length - 1;
+        if (typeof nextIndex === "number") {
+          event.preventDefault();
+          selectWeather(tabs[nextIndex].getAttribute("data-weather-tab"), true);
+        }
+      });
+    });
+  });
+
   var cialloTriggers = Array.prototype.slice.call(
     document.querySelectorAll("#ciallo-trigger, [data-ciallo-trigger]")
   );

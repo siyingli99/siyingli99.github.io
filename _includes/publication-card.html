@@ -1,0 +1,59 @@
+{% assign paper = include.paper %}
+{% if paper.visible %}
+<article class="paper-box{% if paper.featured %} paper-box--featured{% endif %}{% unless paper.image %} paper-box--text{% endunless %}" id="paper-{{ paper.id }}">
+  {% if paper.image %}
+  <div class="paper-box-image">
+    <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt }}" width="{{ paper.image_width }}" height="{{ paper.image_height }}" loading="lazy" decoding="async">
+  </div>
+  {% endif %}
+  <div class="paper-box-text">
+    <div class="paper-meta">
+      <span class="paper-label">{{ paper.label }}</span>
+      <span class="paper-status paper-status--{{ paper.status_class }}">{{ paper.status }}</span>
+    </div>
+    <h3>{{ paper.title }}</h3>
+    {% if paper.visibility.show_authors %}<p class="paper-authors">{{ paper.authors_html }}</p>{% endif %}
+    {% if paper.visibility.show_venue %}<p class="paper-venue">{{ paper.venue }}</p>{% endif %}
+    {% if paper.visibility.show_note and paper.note_html %}<p class="paper-note">{{ paper.note_html }}</p>{% endif %}
+    {% if paper.visibility.show_links or paper.visibility.show_details %}
+    <div class="paper-links">
+      {% if paper.visibility.show_links %}
+        {% for link in paper.links %}
+        <a href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}{% if link.external %} <span aria-hidden="true">↗</span>{% endif %}</a>
+        {% endfor %}
+      {% endif %}
+      {% if paper.visibility.show_details %}
+      <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-{{ paper.id }}">Read abstract <span aria-hidden="true">＋</span></button>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% if paper.visibility.show_details %}
+  <div class="paper-details" id="details-{{ paper.id }}" hidden>
+    <p class="paper-details__label">Abstract</p>
+    <p>{{ paper.abstract }}</p>
+    {% if paper.highlights %}
+    <ul class="paper-highlights" aria-label="{{ paper.title }} highlights">
+      {% for highlight in paper.highlights %}
+      <li><strong>{{ highlight.label }}</strong><span>{{ highlight.text }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if paper.keywords %}
+    <div class="keyword-strip" aria-label="Key topics">
+      {% for keyword in paper.keywords %}<span>{{ keyword }}</span>{% endfor %}
+    </div>
+    {% endif %}
+    {% if paper.visibility.show_citation and paper.citation %}
+    <div class="citation-block">
+      <div class="citation-block__heading">
+        <span>BibTeX</span>
+        <button class="copy-citation" type="button" data-copy-target="bibtex-{{ paper.id }}">Copy</button>
+      </div>
+      <pre id="bibtex-{{ paper.id }}"><code>{{ paper.citation | escape }}</code></pre>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+</article>
+{% endif %}

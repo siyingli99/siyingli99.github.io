@@ -621,6 +621,42 @@ html[data-theme="night"] .paper-box-image img {
   text-transform: uppercase;
 }
 
+.paper-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0.7rem;
+    background: var(--manga-surface-raised);
+    border: 1px solid var(--manga-line-strong);
+  }
+
+  strong,
+  span {
+    display: block;
+  }
+
+  strong {
+    margin-bottom: 0.3rem;
+    color: var(--manga-accent);
+    font-family: $monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  span {
+    color: var(--manga-copy);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+}
+
 .keyword-strip {
   display: flex;
   flex-wrap: wrap;
@@ -1146,6 +1182,10 @@ html[data-theme="night"] .contact-card {
 }
 
 @media (max-width: 767px) {
+  .paper-highlights {
+    grid-template-columns: 1fr;
+  }
+
   .now-panel {
     grid-template-columns: 1fr;
   }

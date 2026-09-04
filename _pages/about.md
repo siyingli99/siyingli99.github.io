@@ -212,17 +212,22 @@ redirect_from:
         <span class="paper-label">AAAI 2027</span>
         <span class="paper-status paper-status--review">Under review</span>
       </div>
-      <h3>EchoSplat: Self-Improving Camera–LiDAR Neural Simulation for End-to-End Autonomous Driving Testing</h3>
+      <h3>EchoSplat: Self-Improving Camera–LiDAR Neural Simulation for Autonomous Driving Testing</h3>
       <p class="paper-authors"><strong>Siying Li</strong>, Ying Ni, Yujia Zhao, Yuanbiao Cao, Jie Sun, Xintao Yan, Ye Tian, Jian Sun, Haotian Shi</p>
       <p class="paper-venue">Under review at the AAAI Conference on Artificial Intelligence.</p>
       <div class="paper-links">
-        <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-echosplat">Research focus <span aria-hidden="true">＋</span></button>
+        <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-echosplat">Read abstract <span aria-hidden="true">＋</span></button>
       </div>
     </div>
     <div class="paper-details" id="details-echosplat" hidden>
-      <p class="paper-details__label">Research focus</p>
-      <p>The manuscript focuses on self-improving camera–LiDAR neural simulation for end-to-end autonomous driving testing. Additional technical details and public materials will be linked after release.</p>
-      <div class="keyword-strip" aria-label="Key topics"><span>Camera–LiDAR</span><span>Self-improvement</span><span>Neural simulation</span></div>
+      <p class="paper-details__label">Abstract</p>
+      <p>Closed-loop testing requires realistic camera and LiDAR observations at policy-induced ego poses, yet reconstruction-based neural simulators degrade when the vehicle moves away from recorded trajectories. EchoSplat addresses this limitation with a shared multi-node 3D Gaussian representation for synchronized camera and LiDAR synthesis. Sensor-specific restoration networks recover degraded off-trajectory observations, while uncertainty-aware multimodal reverse distillation feeds reliable corrections back into the shared scene. This persistent render–restore–refine loop improves novel-view fidelity, cross-modal consistency, representation-level generalization, and downstream driving consistency.</p>
+      <ul class="paper-highlights" aria-label="EchoSplat highlights">
+        <li><strong>Core idea</strong><span>Shared 3D Gaussians with a dynamic-aware spherical LiDAR head for range, intensity, and ray-return synthesis.</span></li>
+        <li><strong>Evaluation</strong><span>Restoration models trained on nuScenes and evaluated on unseen PandaSet scenes without target-scene fine-tuning.</span></li>
+        <li><strong>Key result</strong><span>Achieves 22.18 PSNR and 0.2432 LPIPS for RGB novel views, with the best downstream results in both camera-only and camera–LiDAR tracks.</span></li>
+      </ul>
+      <div class="keyword-strip" aria-label="Key topics"><span>Camera–LiDAR simulation</span><span>3D Gaussian Splatting</span><span>Reverse distillation</span><span>Novel-view synthesis</span></div>
     </div>
   </article>
 
@@ -240,13 +245,18 @@ redirect_from:
       <p class="paper-venue">Under review at the AAAI Conference on Artificial Intelligence.</p>
       <p class="paper-note"><sup>†</sup> Equal contribution.</p>
       <div class="paper-links">
-        <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-scene2flow">Research focus <span aria-hidden="true">＋</span></button>
+        <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-scene2flow">Read abstract <span aria-hidden="true">＋</span></button>
       </div>
     </div>
     <div class="paper-details" id="details-scene2flow" hidden>
-      <p class="paper-details__label">Research focus</p>
-      <p>The manuscript studies evaluation of end-to-end autonomous driving beyond the ego vehicle, with attention to how the surrounding scene and traffic participants evolve. Additional technical details and public materials will be linked after release.</p>
-      <div class="keyword-strip" aria-label="Key topics"><span>Scene flow</span><span>Beyond ego</span><span>Driving evaluation</span></div>
+      <p class="paper-details__label">Abstract</p>
+      <p>Existing closed-loop benchmarks mainly judge task completion, ego safety, and ride comfort, leaving the effects of a driving system on surrounding traffic underexplored. Scene2Flow introduces a traffic-aware evaluation framework built on editable 3D Gaussian scenes, combining action-conditioned multi-camera rendering, reactive background traffic, and a unified interface for heterogeneous end-to-end systems. It aligns ego outcomes and local traffic responses within a common task window, then evaluates traffic efficiency, background-vehicle kinematic fluctuations, and localized oscillation responses. The results show that similar ego-level performance can produce substantially different disturbances in surrounding traffic, and that favorable aggregate efficiency can coexist with amplified post-conflict oscillations.</p>
+      <ul class="paper-highlights" aria-label="Scene2Flow highlights">
+        <li><strong>Evaluation scope</strong><span>240 closed-loop runs covering seven end-to-end systems, a reference policy, two scenarios, three traffic levels, and five random seeds.</span></li>
+        <li><strong>Metric space</strong><span>Jointly characterizes ego outcomes, macroscopic efficiency, kinematic fluctuation, and local wavelet-based oscillation.</span></li>
+        <li><strong>Diagnostic value</strong><span>Reveals weak or condition-dependent agreement between ego-centric rankings and traffic-aware rankings.</span></li>
+      </ul>
+      <div class="keyword-strip" aria-label="Key topics"><span>Traffic-aware evaluation</span><span>Editable 3DGS</span><span>Closed-loop testing</span><span>Traffic-flow analysis</span></div>
     </div>
   </article>
 
@@ -263,13 +273,18 @@ redirect_from:
       <p class="paper-authors">Yujia Zhao, Jie Wang, <strong>Siying Li</strong>, Yuanbiao Cao, Yixin Li, Jialin Fan, Ying Ni, Haotian Shi, Jie Sun, Jian Sun</p>
       <p class="paper-venue">Under review at the AAAI Conference on Artificial Intelligence.</p>
       <div class="paper-links">
-        <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-targetdrive">Research focus <span aria-hidden="true">＋</span></button>
+        <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="details-targetdrive">Read abstract <span aria-hidden="true">＋</span></button>
       </div>
     </div>
     <div class="paper-details" id="details-targetdrive" hidden>
-      <p class="paper-details__label">Research focus</p>
-      <p>The manuscript explores how evaluation signals can close the loop on training-data allocation for end-to-end autonomous driving. Additional technical details and public materials will be linked after release.</p>
-      <div class="keyword-strip" aria-label="Key topics"><span>Training allocation</span><span>Feedback loop</span><span>End-to-end driving</span></div>
+      <p class="paper-details__label">Abstract</p>
+      <p>End-to-end driving models are trained on offline source-domain logs, while deployment quality is determined by closed-loop interaction in a target environment. TargetDrive closes this objective gap with a learner-agnostic outer-loop framework that uses sparse target-domain feedback to guide training allocation. Its Objective-Conditioned Response Teacher estimates context-dependent utility at the scenario-family level, refines those estimates with clip-level safety priors, and converts them into family quotas, replay priorities, and sample weights without changing the learner architecture or learner-side training budget. Experiments on NAVSIM-v2 and Bench2Drive show consistent gains across regression-, diffusion-, and scoring-based planners, particularly in interaction-intensive scenarios.</p>
+      <ul class="paper-highlights" aria-label="TargetDrive highlights">
+        <li><strong>Core idea</strong><span>Uses sparse closed-loop probing to align offline data allocation with target-domain deployment objectives.</span></li>
+        <li><strong>Generalization</strong><span>Evaluated with LTF, DiffusionDrive, NavFormer, VAD, and HiP-AD across NAVSIM-v2 and Bench2Drive.</span></li>
+        <li><strong>Key result</strong><span>Reaches 32.9 EPDMS with LTF, improving by 5.2 points over GLISTER and 3.5 points over the matched-feedback LESS baseline.</span></li>
+      </ul>
+      <div class="keyword-strip" aria-label="Key topics"><span>Training allocation</span><span>Sparse closed-loop feedback</span><span>Data valuation</span><span>End-to-end driving</span></div>
     </div>
   </article>
 </section>
